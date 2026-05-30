@@ -41,3 +41,24 @@ Recommendation Module
 Notifications Module
 Analytics Module
 Admin Module
+
+Event-driven architecture
+Microservices
+Kafka/RabbitMQ
+Kubernetes
+AI recommendation engine
+Audio transcoding pipeline
+Distributed caching
+Observability (Grafana + Prometheus)
+Multi-region CDN
+Blue/Green deployment
+Feature flags
+A/B testing
+├── Modules
+├── Guards
+├── Interceptors
+├── Prisma
+├── Redis
+├── BullMQ
+├── WebSocket Gateway
+└── JWT Auth
