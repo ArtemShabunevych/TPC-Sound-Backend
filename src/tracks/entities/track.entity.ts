@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from 'typeorm';
+import { User } from '../../users/entities/user.entity';
 
 @Entity('tracks')
 export class Track {
@@ -19,6 +20,9 @@ export class Track {
 
   @Column({ nullable: true })
   dominantColor: string;
+
+  @ManyToOne(() => User, (user) => user.tracks, { onDelete: 'CASCADE' })
+  user: User;
 
   @CreateDateColumn()
   createdAt: Date;

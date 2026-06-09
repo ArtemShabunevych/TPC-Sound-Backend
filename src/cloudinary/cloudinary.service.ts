@@ -9,7 +9,7 @@ export class CloudinaryService {
   ): Promise<UploadApiResponse> {
     return await cloudinary.uploader.upload(<string>base64String, {
       colors: true,
-      folder: 'soundgravity/covers', // Просимо Cloudinary повернути палітру кольорів
+      folder: 'soundgravity/covers',
       transformation: [{ width: 500, height: 500, crop: 'limit' }],
     });
   }
@@ -23,6 +23,11 @@ export class CloudinaryService {
         },
         (error, result) => {
           if (error) return reject(error);
+
+          if (!result) {
+            return reject(new Error('Cloudinary не повернув результат завантаження'));
+          }
+
           resolve(result);
         },
       );

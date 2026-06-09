@@ -4,6 +4,6 @@ import { CloudinaryService } from './cloudinary.service';
 
 @Module({
   providers: [CloudinaryProvider, CloudinaryService],
-  exports: [CloudinaryProvider, CloudinaryService], // Експортуємо, щоб TracksModule міг його використовувати
+  exports: [CloudinaryProvider, CloudinaryService],
 })
 export class CloudinaryModule {}

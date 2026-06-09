@@ -1,4 +1,3 @@
-
 import { Controller, Post, Body, UseInterceptors, UploadedFile, Get, Param, Patch, Delete } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { TracksService } from './tracks.service';
@@ -19,7 +18,6 @@ export class TracksController {
   constructor(private readonly tracksService: TracksService) {}
 
   @Post()
-  // Перехоплюємо лише один бінарний файл з назвою 'audio'
   @UseInterceptors(FileInterceptor('audio'))
   create(
     @Body() createTrackDto: CreateTrackDto,
